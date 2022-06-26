@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件 15:41</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 标签内容的JS代码, 用{{}} -->
+    <!-- 点击事件: click -->
+    <!-- 两种语法:  vue1   v-on:事件名 -->
+    <button v-on:click='num++'>{{num}}</button>
+    <!-- 自动化: num变化后, 自动更新相关的页面元素, 例如按钮的内容 -->
+
+    <!-- vue2语法: @事件名 -->
+    <button @click="num++">{{num}}</button>
+
+    <!-- vue的特色: 同一个数据出现在不同的元素里, 一旦变化, 大家一起变 -->
+    <button @click="count++">{{count}}</button>
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: { num: 1, count: 10 }
+    })
+
+
+    // 原生写法
+    // var btn = document.querySelector('button')
+    // btn.onclick = function () {
+    //   var x = this.innerHTML * 1
+    //   x += 1
+    //   this.innerHTML = x
+    // }
+  </script>
+</body>
+
+</html>

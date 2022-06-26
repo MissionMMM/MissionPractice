@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件 16:20</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 对于简单的操作，可以把代码直接在html中书写 -->
+        <button @click="num++">{{num}}</button>
+        <!-- 希望-1，最小是1 -->
+        <button @click="jian">num-1</button>
+    </div>
+
+    <script src="../vendor/vue.js"></script>
+    <script>
+        var v=new Vue({
+            el:'#app',
+            data:{num:10},
+            // 固定属性：methods
+            // 事件触发的函数，都放在这里，最终会混入到vue实例对象中
+            methods:{
+                jian(){
+                    // console.log('-------');
+                    // console.log('this:',this);
+                    // 当前的实例对象v
+                    // console.log(this==v);
+
+                    // 修改num的值,-1
+                    // console.log(v.num);
+                    // this就是当前实例对象，所以
+                    if(this.num>1)this.num--
+                }
+            }
+        })
+        console.log(v);
+    </script>
+</body>
+</html>

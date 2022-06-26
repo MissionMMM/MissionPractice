@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>属性绑定语法 15:25</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 属性绑定语法 分两种 -->
+    <!-- vue1  v-bind:属性名 -->
+    <a v-bind:href="href" v-bind:title="title">{{title}}</a>
+    <!-- vue2 :属性名 -->
+    <a :href="href" :title="title">{{title}}</a>
+    <!-- 注意区分 -->
+    <!-- 不带: 是普通的字符串 -->
+    <!-- 带 : 是 JS代码 -->
+    <button x="8+8" :y="8+8">壮壮</button>
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        title: "Tmooc",
+        href: "http://tmooc.cn"
+      }
+    })
+  </script>
+</body>
+
+</html>

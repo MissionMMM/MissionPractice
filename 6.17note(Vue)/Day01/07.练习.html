@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>练习 16:42</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>count:{{count}}</p>
+    <!-- 如果方法没有参数, ()可以省略不写 -->
+    <button @click="jia1">+1</button>
+    <button @click="jia5">+5</button>
+    <button @click="jia10">+10</button>
+    <button @click="jia10()">+10</button>
+    <hr>
+    <!-- ()中就是实参 -->
+    <button @click="jia(1)">+1</button>
+    <button @click="jia(5)">+5</button>
+    <button @click="jia(10)">+10</button>
+    <button @click="jia(30)">+30</button>
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: { count: 10 },
+      methods: {
+        jia(n) { this.count += n },
+
+        jia1() { this.count += 1 },
+        jia5() { this.count += 5 },
+        jia10() { this.count += 10 }
+      }
+    })
+  </script>
+</body>
+
+</html>

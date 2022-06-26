@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>练习 15:56</title>
+</head>
+
+<body>
+  <div id="zz">
+    <button @click="num--">-</button>
+    <span>{{num}}</span>
+    <button @click="num++">+</button>
+    <p>单价: {{price}}</p>
+    <!-- 单价x数量 -->
+    <p>总价: {{price * num}}</p>
+    <!-- vue特点: 当数据变化时, 相关的所有元素都会`自动`更新 -->
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#zz',
+      data: { num: 6, price: 999 }
+    })
+  </script>
+</body>
+
+</html>

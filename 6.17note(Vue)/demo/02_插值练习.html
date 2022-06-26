@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插值练习 15:00</title>
+</head>
+<body>
+    <div id="box">
+        <p>{{eid}}</p>
+        <p>{{ename}}</p>
+        <p>{{age}}</p>
+    </div>
+
+    <script src="../vendor/vue.js"></script>
+    <script>
+        // 制作一个Vue对象，服务于id=box的元素
+        // 初始化时提供一些数据：eid=1001,ename=你大爷,age=30
+        // 最后把数据显示在box里
+        new Vue({
+            el:'#box',
+            data:{
+                eid:1001,
+                ename:'你大爷',
+                age:30
+            }
+        })
+    </script>
+</body>
+</html>

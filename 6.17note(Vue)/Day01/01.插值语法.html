@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>插值语法 14:29</title>
+</head>
+
+<body>
+  <!-- 尤雨溪 在Vue中, 为大家提供了一套新的语法, 允许直接在HTML中书写JS代码 -->
+  <div id="app">
+    <!-- 壮壮可以控制的范围:  在 app 里, 可以为所欲为 -->
+    <p>主人: {{uname}}</p>
+    <!-- {{}}: 类似 模板字符串中的 ${}, 其中的代码是JS的 -->
+    <p> 8+8={{8+8}}</p>
+    <p>贾维斯, 我的女孩是谁? <b>{{girl}}</b></p>
+    <p>我的存款有多少? <b>{{money}}</b></p>
+  </div>
+
+  <!-- 注意: vue的语法只能在 vue对象服务的元素里书写 -->
+  <p>贾维斯, 我的女孩是谁? <b>{{girl}}</b></p>
+
+
+  <!-- 脚本分两种 -->
+  <!-- vue.js :开发版, 给人看的. 在使用时提供更多的报错 -->
+  <!-- vue.min.js: 产品版, 没有报错 体积更小. 适合上线时使用 -->
+  <script src="./vendor/vue.js"></script>
+  <script>
+    // Vue哪来的? 脚本中引入的
+    // new: 触发构造函数, 得到 Vue 构造的实例对象
+    // el: 是固定的配置项, 指定Vue实例管理的元素, 值是 id选择器
+
+    // 相当于: 
+    // new 钢铁侠战甲( { 主人: '陶壮壮', 工具:{ 钱,武器,范凯 } } )
+
+
+    // 返回值 v 就是创造好的对象, 拥有强大的功能
+
+    // data: 固定属性, 用于提供各种数据
+    var v = new Vue({
+      el: '#app',
+      // 通过后台查看: data中的数据会加载到 生成的vue对象里
+      data: {
+        money: 9999,
+        uname: "壮壮",
+        girl: '范凯'
+      }
+    })
+
+    console.log(v)
+  </script>
+</body>
+
+</html>

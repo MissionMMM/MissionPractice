@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>练习 17:15</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 需求: 点击按钮后, 让图片发生对应的变化 -->
+    <!-- 做法分两种 -->
+    <!-- 1. DOM方案: 用自定义属性存储名称 -->
+    <!-- 2. vue方案: 依赖事件传参 -->
+    <button @click="pickHero('Annie')">安妮</button>
+    <button @click="pickHero('Olaf')">奥拉夫</button>
+    <button @click="pickHero('Zoe')">佐伊</button>
+    <button @click="pickHero('Gwen')">格温</button>
+    <br>
+    <!-- :src="JS代码"    JS代码中怎么拼接字符串? 模板 -->
+    <img :src="`./heros/${heroName}.png`" alt="">
+
+    <!-- 需要你区分 -->
+    <!-- 标签内容用{{}}   属性用 : -->
+    <a href="" :x="3+3">{{3+3}}</a>
+  </div>
+
+  <!-- 学习vue的思想: HTML中会变化的内容,要存储在data里, 作为数据项 -->
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        // 分析: 图片地址中的 英雄名 会变化
+        heroName: 'Annie'
+      },
+      methods: {
+        // 声明形参 接收 实参
+        pickHero(name) {
+          this.heroName = name
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

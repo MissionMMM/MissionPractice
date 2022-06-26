@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大小图切换</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <img src="./img/1.jpg" @click="pickHero('1')">
+            <img src="./img/2.jpg" @click="pickHero('2')">
+            <img src="./img/3.jpg" @click="pickHero('3')">
+            <img src="./img/4.jpg" @click="pickHero('4')">
+            <img src="./img/5.jpg" @click="pickHero('5')">
+            <img src="./img/6.jpg" @click="pickHero('6')">
+            <img src="./img/7.jpg" @click="pickHero('7')">
+        </div>
+        <!-- 变化 -->
+        <img :src="`./img2/${heroName}.png`">
+    </div>
+
+    <script src="../vendor/vue.min.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{heroName:"1"},
+            methods:{
+                pickHero(h){
+                    this.heroName=h
+                }
+            }
+        })
+    </script>
+</body>
+</html>

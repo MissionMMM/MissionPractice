@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>练习 17:40</title>
+</head>
+
+<body>
+  <!-- 大小图切换 -->
+  <div id="app">
+    <div>
+      <img src="./heros/Annie.png" @click="chooseHero('Annie')" alt="">
+      <img src="./heros/Galio.png" @click="chooseHero('Galio')" alt="">
+      <img src="./heros/Gwen.png" @click="chooseHero('Gwen')" alt="">
+      <img src="./heros/Zoe.png" @click="chooseHero('Zoe')" alt="">
+      <img src="./heros/Seraphine.png" @click="chooseHero('Seraphine')" alt="">
+    </div>
+
+    <!-- 变化 -->
+    <img :src="`./heros/${heroName}.jfif`" alt="">
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: { heroName: 'Annie' },
+      methods: {
+        chooseHero(suibian) {
+          this.heroName = suibian
+        }
+      }
+    })
+
+    // 猜一猜都什么意思
+    // zz   变量
+    // 'zz' 字符串
+    // /zz/ 正则
+    // [zz] 数组
+    // {zz} 对象
+  </script>
+</body>
+
+</html>
